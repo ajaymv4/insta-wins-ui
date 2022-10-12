@@ -1,0 +1,12 @@
+{
+    "pagination": {
+        "enabled": true,
+        "showFirstLastButton": true,
+        "defaultItemsPerPage": 5,
+        "itemsPerPageOptions": [
+            8,
+            50
+        ]
+        
+    }
+}

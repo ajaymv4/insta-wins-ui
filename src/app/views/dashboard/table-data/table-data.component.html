@@ -1,0 +1,54 @@
+<div #dashboard class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Draw Type Column -->
+      <ng-container matColumnDef="gameType">
+        <th mat-header-cell *matHeaderCellDef> Draw Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.gameDetails.gameRoomType.gameRoomTypeId}} </td>
+      </ng-container>
+
+       <!-- Draw Id Column -->
+       <ng-container matColumnDef="gameId">
+        <th mat-header-cell *matHeaderCellDef> Draw Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.gameDetails.gameId}} </td>
+      </ng-container>
+  
+      <!-- Ticket Token -->
+      <ng-container matColumnDef="token">
+        <th mat-header-cell *matHeaderCellDef> Token </th>
+        <td mat-cell *matCellDef="let element"> {{element.tokenId}} </td>
+      </ng-container>
+  
+      <!-- Ticket Token -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Draw Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.gameDetails.gameDate | date:'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+       <!-- Positon Column -->
+       <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Position </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'padding-left': '1%','font-weight':'bold'}"> {{element.playerPos?element.playerPos:'  -'}} </td>
+      </ng-container>
+  
+      <!-- Amount Column-->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'padding-left': '1%','color': getColor(element.amount),'font-weight':'bold'}"> {{element.amount}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+
+    <!--<mat-paginator #paginator [length]="dataSource.length" [pageSize]="appConfig?.pagination.defaultItemsPerPage" [pageSizeOptions]="pageSizes" aria-label="Select page" showFirstLastButtons>
+</mat-paginator>-->
+    
+  </div>
+
+
+    <mat-paginator #paginator [length]="dataSource.length"
+    [pageSize]="appConfig?.pagination.defaultItemsPerPage"
+    hidePageSize="true"    [showFirstLastButtons]="appConfig?.pagination.showFirstLastButton"></mat-paginator>
+    

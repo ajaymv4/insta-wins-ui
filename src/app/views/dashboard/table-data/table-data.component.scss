@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+    text-align: left;
+  }
+
+  .header-align-right {
+    text-align: center;
+    justify-content: flex-end;
+  }
+
+  .positive {
+    background-color: green;
+}
+
+.negative {
+    background-color: red;
+}
+
+
+.mat-column-gameType{
+  flex: none;
+  width: 5%;
+}
+
+.mat-column-gameId{
+  flex: none;
+  width: 25%;
+}
+
+.mat-column-date{
+  flex: none;
+  width: 15%;
+}
+
+
+.mat-column-token{
+  flex: none;
+  width: 10%;
+}
+
+.mat-column-position{
+  flex: none;
+  width: 10%;
+}
+
+.mat-column-amount{
+  flex: none;
+  width: 10%;
+}
+
+.mat-mdc-paginator-page-size-select {
+  margin: 10px;
+  width: 10px;
+}
